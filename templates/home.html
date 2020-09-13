@@ -1,1 +1,11 @@
 <h1>Hello World</h1>
+<form action="{{url_for('main')}}" method="post">
+    <input type="text" name="location">
+    <input type="submit">
+</form>
+{% for g in parking_garages %}
+   {% for key, value in g.items() %}
+      <h1>Key: {{key}}</h1>
+      <h2>Value: {{value}}</h2>
+   {% endfor %}
+{% endfor %}

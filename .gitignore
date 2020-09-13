@@ -1,2 +1,3 @@
 myenv/
 secrets.py
+__pycache__/
