@@ -1,4 +1,4 @@
-# AirgarageChallenge
+# AdityaAirgarageChallenge
 
 
 ## Requirements to run this application
