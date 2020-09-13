@@ -13,5 +13,9 @@
   3. Create a new virtual environment called myenv with the command `virtualenv myenv`
   4. Activate the virtual environment with `souce myenv/bin/activate` for Mac or `source ./myenvenv/bin/activate` for Linux
   5. Install the necessary packages with the command `pip3 install -r requirements.txt`
-  6. Launch the application with `python3 app.py` and go to localhost:5000 in your browser
+  6. Create a file called `secrets.py` in the `AdityaAirgarageChallenge` directory and create a variable called `yelp_api_key` and assign it to the Yelp API Key. The file should look like 
+  ```
+  yelp_api_key = "API-KEY-GOES-HERE"
+  ```
+  7. Launch the application with `python3 app.py` and go to localhost:5000 in your browser
   
