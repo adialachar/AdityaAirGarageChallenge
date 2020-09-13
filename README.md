@@ -8,7 +8,7 @@
 
 
 ## How to run this application (on Linux or Mac)
-  1. clone this repository using the command ` git clone https://github.com/adialachar/AdityaAirgarageChallenge.git ` in your terminal and enter the directory that has just been created with `cd AdityaAirgarageChallenge`
+  1. clone this repository using the command ` git clone https://github.com/adialachar/AdityaAirGarageChallenge.git ` in your terminal and enter the directory that has just been created with `cd AdityaAirGarageChallenge`
   2. Install virtualenv with the command `pip3 install virtualenv`
   3. Create a new virtual environment called myenv with the command `virtualenv myenv`
   4. Activate the virtual environment with `souce myenv/bin/activate` for Mac or `source ./myenv/bin/activate` for Linux
