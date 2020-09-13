@@ -10,7 +10,7 @@ def main():
     if request.method == "POST":
         print(request.form.get('location'))
         location = request.form.get('location')
-        # todo: check if location is none, return empty list + error message
+
         url = "https://api.yelp.com/v3/businesses/search"
         payload = {'location':location, "term":"Parking Garage"}
         headers = {'Authorization': 'Bearer ' + yelp_api_key}
@@ -18,31 +18,30 @@ def main():
 
         p_g = r.json().get("businesses")
         p_g = sorted(p_g, key=lambda k: k['rating'])
-        # print(p_g)
-        # image if available
-        # star rating
-        # review count
-        # link to the yelp page
+
         parking_garages = []
 
+        # extract data from api
         for p in p_g:
             d = {}
-            d['name'] = p.get('name'), 
-            d['address'] = ' '.join(p.get('location').get('display_address')), 
+            d['name'] = p.get('name')
+            d['address'] = ' '.join(p.get('location').get('display_address'))
             d['image_url'] = p.get("image_url")
-            d['review_count'] = p.get('review_count'),
-            d['rating'] = p.get('rating'), 
+            d['review_count'] = p.get('review_count')
+            d['rating'] = p.get('rating')
             d['url'] = p.get("url")
-        
+
             # score calculation
             # score = ( number of reviews * rating ) / (number of reviews + 1)
             score = ( int(p.get("review_count")) * float(p.get('rating')) / int(p.get("review_count")) + 1) 
             d['score'] = score
-
+            print(d)
             parking_garages.append(d)
 
+        parking_garages = list({v['name']:v for v in parking_garages}.values())
 
 
+    #return data to html page
     return render_template('home.html', parking_garages=parking_garages)
 
 if __name__ == "__main__":
