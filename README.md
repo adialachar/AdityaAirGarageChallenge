@@ -17,5 +17,5 @@
   ```
   yelp_api_key = "API-KEY-GOES-HERE"
   ```
-  7. Launch the application with `python3 app.py` and go to localhost:5000 in your browser
+  7. Launch the application `python3 app.py` and go to localhost:5000 in your browser
   
